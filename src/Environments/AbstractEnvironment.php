@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace WSW\TotalVoice\Environments;
 
@@ -28,7 +28,7 @@ abstract class AbstractEnvironment
      */
     public function getWsUrl(string $resource): string
     {
-        return 'https://' . $this->getWsHost() . $resource;
+        return 'https://'.$this->getWsHost().$resource;
     }
 
     /**

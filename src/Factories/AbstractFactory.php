@@ -24,7 +24,7 @@ abstract class AbstractFactory
      * @param array $data
      * @param \WSW\TotalVoice\Entities\AbstractEntity $entity
      */
-    protected static function mountEntity(array $data = [], AbstractEntity $entity)
+    protected static function mountEntity(array $data, AbstractEntity $entity)
     {
         array_walk($data, function ($value, $key) use ($entity) {
             $method = 'set'.ucfirst($key);

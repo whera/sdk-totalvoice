@@ -21,7 +21,7 @@ abstract class AbstractCollection extends ArrayObject
      */
     public function __construct(array $input = [])
     {
-        $data = array_map(function($row) {
+        $data = array_map(function ($row) {
             return $this->arrayToEntity($row);
         }, $input);
 

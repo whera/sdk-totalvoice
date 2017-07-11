@@ -4,6 +4,7 @@ declare(strict_types = 1);
 namespace WSW\TotalVoice\Entities;
 
 use DateTime;
+use ReflectionClass;
 
 /**
  * Class AbstractEntity
@@ -61,5 +62,18 @@ abstract class AbstractEntity
         $this->createdAt = $createdAt;
 
         return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getFillable(): array
+    {
+        $merge = array_merge(
+            (new ReflectionClass(self::class))->getDefaultProperties(),
+            (new ReflectionClass(static::class))->getDefaultProperties()
+        );
+
+        return array_keys($merge);
     }
 }

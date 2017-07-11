@@ -3,15 +3,15 @@ declare(strict_types = 1);
 
 namespace WSW\TotalVoice\Collections;
 
-use WSW\TotalVoice\Factories\SmsAnswersFactory;
+use WSW\TotalVoice\Factories\SmsFactory;
 
 /**
- * Class SmsAnswersCollection
+ * Class SmsCollection
  *
  * @package WSW\TotalVoice\Collections
  * @author Ronaldo Matos Rodrigues <ronaldo@whera.com.br>
  */
-class SmsAnswersCollection extends AbstractCollection
+class SmsCollection extends AbstractCollection
 {
-    const FACTORY = SmsAnswersFactory::class;
+    const FACTORY = SmsFactory::class;
 }

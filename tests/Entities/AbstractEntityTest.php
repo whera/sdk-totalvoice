@@ -46,4 +46,13 @@ class AbstractEntityTest extends TestCase
         $this->assertEquals(123, $this->entity->getId());
         $this->assertInstanceOf(DateTime::class, $this->entity->getCreatedAt());
     }
+
+    public function testMethodFillable()
+    {
+        $sms = new SmsAnswers();
+        $this->assertInternalType('array', $sms->getFillable());
+        $this->assertTrue(in_array('id', $sms->getFillable()));
+        $this->assertTrue(in_array('createdAt', $sms->getFillable()));
+        $this->assertTrue(in_array('message', $sms->getFillable()));
+    }
 }

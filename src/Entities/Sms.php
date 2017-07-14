@@ -72,7 +72,7 @@ class Sms extends AbstractEntity
     /**
      * @return \DateTime
      */
-    public function getSendDate(): DateTime
+    public function getSendDate()
     {
         return $this->sendDate;
     }

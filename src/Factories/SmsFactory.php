@@ -29,13 +29,7 @@ class SmsFactory extends AbstractFactory
     {
         $entity = new Sms();
 
-        if (isset($data['id']) && !is_null($data['id'])) {
-            $entity->setId((int) $data['id']);
-        }
-
-        if (isset($data['data_criacao']) && !is_null($data['data_criacao'])) {
-            $entity->setCreatedAt(DateTime::createFromFormat(DateTime::W3C, $data['data_criacao']));
-        }
+        self::transformerFiled($entity, $data);
 
         if (isset($data['data_envio']) && !is_null($data['data_envio'])) {
             $entity->setSendDate(DateTime::createFromFormat(DateTime::W3C, $data['data_envio']));

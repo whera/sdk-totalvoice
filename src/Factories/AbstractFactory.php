@@ -20,4 +20,23 @@ abstract class AbstractFactory
      * @param array $data
      */
     abstract public static function createFromArray(array $data);
+
+    /**
+     * @param \WSW\TotalVoice\Entities\AbstractEntity $entity
+     * @param array $data
+     */
+    protected static function transformerFiled(AbstractEntity $entity, array $data)
+    {
+        if (isset($data['id']) && !is_null($data['id'])) {
+            $entity->setId((int) $data['id']);
+        }
+
+        if (isset($data['data_criacao']) && !is_null($data['data_criacao'])) {
+            $entity->setCreatedAt(DateTime::createFromFormat(DateTime::W3C, $data['data_criacao']));
+        }
+
+        if (isset($data['data_resposta']) && !is_null($data['data_resposta'])) {
+            $entity->setCreatedAt(DateTime::createFromFormat(DateTime::W3C, $data['data_resposta']));
+        }
+    }
 }

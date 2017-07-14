@@ -27,16 +27,10 @@ class SmsAnswersFactory extends AbstractFactory
     {
         $entity = new SmsAnswers();
 
-        if (isset($data['id']) && !is_null($data['id'])) {
-            $entity->setId((int) $data['id']);
-        }
+        self::transformerFiled($entity, $data);
 
         if (isset($data['resposta']) && !is_null($data['resposta'])) {
             $entity->setMessage($data['resposta']);
-        }
-
-        if (isset($data['data_resposta']) && !is_null($data['data_resposta'])) {
-            $entity->setCreatedAt(DateTime::createFromFormat(DateTime::W3C, $data['data_resposta']));
         }
 
         return $entity;

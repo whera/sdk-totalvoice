@@ -47,7 +47,7 @@ abstract class AbstractEntity
     /**
      * @return \DateTime
      */
-    public function getCreatedAt(): DateTime
+    public function getCreatedAt()
     {
         return $this->createdAt;
     }

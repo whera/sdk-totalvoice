@@ -19,5 +19,5 @@ abstract class AbstractFactory
     /**
      * @param array $data
      */
-    public abstract static function createFromArray(array $data);
+    abstract public static function createFromArray(array $data);
 }

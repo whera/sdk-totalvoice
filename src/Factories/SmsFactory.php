@@ -7,6 +7,7 @@ namespace WSW\TotalVoice\Factories;
 use DateTime;
 use WSW\TotalVoice\Collections\SmsAnswersCollection;
 use WSW\TotalVoice\Entities\Sms;
+use WSW\TotalVoice\Support\DateTimeSupport;
 
 /**
  * Class SmsFactory
@@ -32,7 +33,7 @@ class SmsFactory extends AbstractFactory
         self::transformerFiled($entity, $data);
 
         if (isset($data['data_envio']) && !is_null($data['data_envio'])) {
-            $entity->setSendDate(DateTime::createFromFormat(DateTime::W3C, $data['data_envio']));
+            $entity->setSendDate(DateTimeSupport::load($data['data_envio']));
         }
 
         if (isset($data['mensagem']) && !is_null($data['mensagem'])) {

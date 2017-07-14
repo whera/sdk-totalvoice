@@ -6,6 +6,7 @@ namespace WSW\TotalVoice\Factories;
 
 use DateTime;
 use WSW\TotalVoice\Entities\AbstractEntity;
+use WSW\TotalVoice\Support\DateTimeSupport;
 
 /**
  * Class AbstractFactory
@@ -32,11 +33,11 @@ abstract class AbstractFactory
         }
 
         if (isset($data['data_criacao']) && !is_null($data['data_criacao'])) {
-            $entity->setCreatedAt(DateTime::createFromFormat(DateTime::W3C, $data['data_criacao']));
+            $entity->setCreatedAt(DateTimeSupport::load($data['data_criacao']));
         }
 
         if (isset($data['data_resposta']) && !is_null($data['data_resposta'])) {
-            $entity->setCreatedAt(DateTime::createFromFormat(DateTime::W3C, $data['data_resposta']));
+            $entity->setCreatedAt(DateTimeSupport::load($data['data_resposta']));
         }
     }
 }

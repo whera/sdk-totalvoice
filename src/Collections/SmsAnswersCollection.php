@@ -13,5 +13,8 @@ use WSW\TotalVoice\Factories\SmsAnswersFactory;
  */
 class SmsAnswersCollection extends AbstractCollection
 {
-    const FACTORY = SmsAnswersFactory::class;
+    /**
+     * @var string
+     */
+    protected $factory = SmsAnswersFactory::class;
 }

@@ -19,13 +19,13 @@ class SmsCollectionTest extends TestCase
         $arr = [
             [
                 "id" => 1,
-                "message" => 'xpto ' . microtime(),
-                'createdAt' => (new DateTime())->format(DateTime::W3C)
+                "mensagem" => 'xpto ' . microtime(),
+                'data_criacao' => (new DateTime())->format(DateTime::W3C)
             ],
             [
                 "id" => 2,
-                "message" => 'xpto ' . microtime(),
-                'createdAt' => (new DateTime())->format(DateTime::W3C)
+                "mensagem" => 'xpto ' . microtime(),
+                'data_criacao' => (new DateTime())->format(DateTime::W3C)
             ]
         ];
 

@@ -14,7 +14,10 @@ use WSW\TotalVoice\Entities\AbstractEntity;
  */
 abstract class AbstractCollection extends ArrayObject
 {
-    const FACTORY = '';
+    /**
+     * @var string
+     */
+    protected $factory;
 
     /**
      * @param array $input
@@ -26,7 +29,6 @@ abstract class AbstractCollection extends ArrayObject
         }, $input);
 
         unset($input);
-
         parent::__construct($data);
     }
 
@@ -37,6 +39,6 @@ abstract class AbstractCollection extends ArrayObject
      */
     private function arrayToEntity(array $data): AbstractEntity
     {
-        return forward_static_call_array([static::FACTORY, 'createFromArray'], [$data]);
+        return forward_static_call_array([$this->factory, 'createFromArray'], [$data]);
     }
 }
